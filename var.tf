@@ -1,5 +1,3 @@
-
-
 # var.tf
 
 variable "aws_region" {
@@ -17,17 +15,13 @@ variable "az_count" {
   default     = "2"
 }
 
-variable "app_image" {
-  description = "Docker image to run in the ECS cluster"
-  default     = "nginx:latest"
-}
 
-variable "app_port" {
+variable "port" {
   description = "Port exposed by the docker image to redirect traffic to"
   default     = 8080
 }
 
-variable "app_count" {
+variable "count" {
   description = "Number of docker containers to run"
   default     = 1
 }

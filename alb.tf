@@ -6,7 +6,7 @@ resource "aws_alb" "main" {
   security_groups = [aws_security_group.lb.id]
 }
 
-resource "aws_alb_target_group" "app" {
+resource "aws_alb_target_group" "TG" {
   name        = "TF-task-target-group"
   port        = 80
   protocol    = "HTTP"
@@ -31,7 +31,7 @@ resource "aws_alb_listener" "front_end" {
   protocol          = "HTTP"
 
   default_action {
-    target_group_arn = aws_alb_target_group.app.id
+    target_group_arn = aws_alb_target_group.TG.id
     type             = "forward"
   }
 }
